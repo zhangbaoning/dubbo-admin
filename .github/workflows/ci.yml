@@ -17,3 +17,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build with Maven
         run: ./mvnw package  -DskipTests=true
+      - name: Upload JAR file
+        uses: actions/upload-artifact@v2
+        with:
+          path: dubbo-admin-distribution/target/*.jar      
